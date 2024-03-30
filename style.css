@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+:root {
+
+    --primary-0: #dfff00;
+    --primary: #fffc00;
+    --primary-100:  #e9e501;
+
+    --black: #000000;
+    --black-100: #181818;
+
+    --white: #ffffff;
+    --white-100: #faf9f9;
+    --white-200: #efefef;
+    --white-300: #e2e2e2;
+
+    --gray: #cccccc;
+    --gray-100: #c2c2c2;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--black-100) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 15px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    font-family: 'Geologica', sans-serif !important;
+}
+
+header nav {
+    background-color: var(--black-100);
+}
+
+.navbar .navbar-toggler {
+    color: var(--primary)!important;
+}
+
+.navbar .navbar-toggler:focus {
+    color: var(--primary-0)!important;
+}
+
+header .navbar-brand {
+    color: var(--white) !important;
+    font-weight: 700;
+}
+
+header .nav-link {
+    color: var(--white) !important;
+}
+
+header .nav-link:hover {
+    color: var(--white-300) !important;
+}
+
+#home, #current, #daily {
+    font-family: 'Geologica', sans-serif;
+}
+
+#home #about {
+    display: grid;
+    place-self: center;
+}
+
+#home #about .btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--black) !important;
+    border: none;
+    margin-top: 1em;
+    padding: 8px 16px 8px 16px !important;
+    border-radius: 25px;
+}
+
+#home #about .btn-primary:hover {
+    background-color: var(--primary-100) !important;
+}
+
+#home #about .btn-primary:active {
+    box-shadow: 0 0 0 3px var(--primary-0) !important;
+}
+
+#home #about .btn-primary:focus {
+    box-shadow: 0 0 0 3px var(--primary-0) !important;
+}
+
+#home #message img {
+    animation: fade-in 2.5s ease-in-out forwards;
+    animation-range: contain;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}  
+
+#current #input {
+    display: grid;
+    place-self: center;
+}
+
+#current #input form {
+    display: flex;
+    align-items: center;
+}
+
+#current #input #cityInput {
+    height: 45px;
+    width: 100%;
+    border-radius: 25px;
+    border: 2px dashed var(--primary-100);
+    outline: none;
+    padding: 8px;
+}
+
+#current #input #cityInput:focus {
+    box-shadow: 0 0 0 2px var(--primary-0);
+    border: 2px solid var(--primary-100);
+}
+
+#current #input .btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--black) !important;
+    border: none;
+    margin-top: 1em;
+    padding: 8px 16px 8px 16px !important;
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+    margin: 0;
+}
+
+#current #input .btn-primary:hover {
+    background-color: var(--primary-100) !important;
+}
+
+#current #input .btn-primary:active {
+    box-shadow: 0 0 0 3px var(--primary-0) !important;
+}
+
+#current #input .btn-primary:focus {
+    box-shadow: 0 0 0 3px var(--primary-0) !important;
+}
+
+#current #output .card {
+    background-color: var(--primary) !important;
+    color: var(--black) !important;
+    text-align: center;
+    border-radius: 25px;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: floatIn 1s ease-in-out forwards;
+    animation-timeline: view();
+    animation-range: cover;
+    opacity: 0;
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    75% {   
+        opacity: 1.25;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#current #output #weatherDisplay #temperature {
+    font-weight: 900;
+}
+
+#current #output #weatherDisplay #weather {
+    font-weight: 700;
+}
+
+#current #output #weatherDisplay #description {
+    font-weight: 400;
+}
+
+
+#daily .card {
+    background-color: var(--primary) !important;
+    color: var(--black) !important;
+    text-align: center;
+    border-radius: 25px;
+    animation: floatIn 1s ease-in-out forwards;
+    animation-timeline: view();
+    animation-range: cover;
+    opacity: 0;
+}
+
+#daily .card img {
+    margin: 0 auto;
+}
+
+.slick-slide {
+    margin: 0 10px;
+}
+
+.slick-list {
+    margin: 0 -10px;
+}
+
+.slider-weather {
+    cursor: pointer;
+}
