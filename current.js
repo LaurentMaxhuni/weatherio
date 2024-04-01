@@ -73,5 +73,3 @@ function displayWeather(data) {
             windDirection.innerHTML = "Wind Direction: ?"           
     };
 };
-
-// 8891d02638504842786690943645d56e
