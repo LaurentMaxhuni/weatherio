@@ -27,6 +27,11 @@
     border-radius: 15px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -92,18 +97,8 @@ header .nav-link:hover {
 
 #home #message img {
     animation: fade-in 2.5s ease-in-out forwards;
-    animation-range: contain;
+
 }
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}  
 
 #current #input {
     display: grid;
@@ -162,24 +157,37 @@ header .nav-link:hover {
     transition: opacity 0.5s ease, transform 0.5s ease;
     animation: floatIn 1s ease-in-out forwards;
     animation-timeline: view();
-    animation-range: cover;
+    animation-range: cover();
     opacity: 0;
 }
 
-@keyframes floatIn {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes floatIn {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+    
+        75% {   
+            opacity: 1.25;
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
-    75% {   
-        opacity: 1.25;
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }  
+    
 }
 
 #current #output #weatherDisplay #temperature {
@@ -194,19 +202,33 @@ header .nav-link:hover {
     font-weight: 400;
 }
 
+#daily {
+    font-family: 'Geologica', sans-serif;
+}
 
 #daily .card {
     background-color: var(--primary) !important;
     color: var(--black) !important;
     text-align: center;
     border-radius: 25px;
-    animation: floatIn 1s ease-in-out forwards;
-    animation-timeline: view();
-    animation-range: cover;
-    opacity: 0;
 }
 
 #daily .card img {
+    margin: 0 auto;
+}
+
+#hourly {
+    font-family: 'Geologica', sans-serif;
+}
+
+#hourly .card {
+    background-color: var(--primary) !important;
+    color: var(--black) !important;
+    text-align: center;
+    border-radius: 25px;
+}
+
+#hourly .card img {
     margin: 0 auto;
 }
 
@@ -222,7 +244,41 @@ header .nav-link:hover {
     cursor: pointer;
 }
 
+.slick-prev::before {
+    color: var(--black) !important;
+}
+
+.slick-next::before{
+    color: var(--black) !important;
+}
+
 .row {
     margin-right: 0% !important;
     margin-left: 0% !important;
+}
+
+#date {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    background-color: var(--primary);
+    border-radius: 15px;
+    padding: 4px 8px 4px 8px;
+    font-family: 'Geologica', sans-serif;
+}
+
+#date p {
+    font-size: clamp(12px, 16px, 16px); 
+    margin: 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (min-device-width: 50px) and (max-device-width: 508px)  {
+    #date {
+        padding: 2px 4px 2px 4px;
+    }
 }

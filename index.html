@@ -30,6 +30,9 @@
                 <a class="nav-link" href="#current">Current</a>
               </li>
               <li class="nav-item text-center">
+                <a class="nav-link" href="#hourly">Hourly</a>
+              </li>
+              <li class="nav-item text-center">
                 <a class="nav-link" href="#daily">Daily</a>
               </li>
             </ul>
@@ -100,95 +103,27 @@
             </div>
         </div>
     </section>
-    <section id="daily" class="mt-5 mb-5 py-5">
+    <section class="mt-5 mb-5 py-5" id="hourly">
       <div class="container">
-        <h1>The next 8 days:</h1>
+        <h1 class="mt-5">The next 48 hours:</h1>
         <div class="row mt-5 mb-2">
-          <div class="slider-weather">
-            <div class="card py-5 mb-2">
-              <div id="weatherDisplay">
-                <h5 id="day1"></h5>
-                <img src="" alt="" class="img-fluid" width="100" height="100" id="weatherIcon1">
-                  <h1 id="temperature1"><i class="bi bi-thermometer mx-1"></i>--/--°C</h1>
-                  <h4 id="weather1"> --/--</h4>
-                  <h6 id="weatherDescription1"> --/--</h6>
-                  <p id="humidity1"><i class="bi bi-droplet mx-1"></i> --/--%</p>
-              </div>
-            </div>
-            <div class="card py-5">
-              <div id="weatherDisplay2">
-                <h5 id="day2"></h5>
-                <img src="" alt="" class="img-fluid" width="100" height="100" id="weatherIcon2">
-                  <h1 id="temperature2"><i class="bi bi-thermometer mx-1"></i>--/--°C</h1>
-                  <h4 id="weather2"> --/--</h4>
-                  <h6 id="weatherDescription2"> --/--</h6>
-                  <p id="humidity2"><i class="bi bi-droplet mx-1"></i> --/--%</p>
-              </div>
-            </div>
-            <div class="card py-5">
-              <div id="weatherDisplay3">
-                <h5 id="day3"></h5>
-                <img src="" alt="" class="img-fluid" width="100" height="100" id="weatherIcon3">
-                <h1 id="temperature3"><i class="bi bi-thermometer mx-1"></i>--/--°C</h1>
-                <h4 id="weather3"> --/--</h4>
-                <h6 id="weatherDescription3"> --/--</h6>
-                <p id="humidity3"><i class="bi bi-droplet mx-1"></i> --/--%</p>
-              </div>
-            </div>
-            <div class="card py-5">
-              <div id="weatherDisplay4">
-                <h5 id="day4"></h5>
-                <img src="" alt="" class="img-fluid" width="100" height="100" id="weatherIcon4">
-                  <h1 id="temperature4"><i class="bi bi-thermometer mx-1"></i>--/--°C</h1>
-                  <h4 id="weather4"> --/--</h4>
-                  <h6 id="weatherDescription4"> --/--</h6>
-                  <p id="humidity4"><i class="bi bi-droplet mx-1"></i> --/--%</p>
-              </div>
-            </div>
-            <div class="card py-5">
-              <div id="weatherDisplay5">
-                <h5 id="day5"></h5>
-                <img src="" alt="" class="img-fluid" width="100" height="100" id="weatherIcon5">
-                  <h1 id="temperature5"><i class="bi bi-thermometer mx-1"></i>--/--°C</h1>
-                  <h4 id="weather5"> --/--</h4>
-                  <h6 id="weatherDescription5"> --/--</h6>
-                  <p id="humidity5"><i class="bi bi-droplet mx-1"></i> --/--%</p>
-              </div>
-            </div>
-            <div class="card py-5">
-              <div id="weatherDisplay6">
-                <h5 id="day6"></h5>
-                <img src="" alt="" class="img-fluid" width="100" height="100" id="weatherIcon6">
-                  <h1 id="temperature6"><i class="bi bi-thermometer mx-1"></i>--/--°C</h1>
-                  <h4 id="weather6"> --/--</h4>
-                  <h6 id="weatherDescription6"> --/--</h6>
-                  <p id="humidity6"><i class="bi bi-droplet mx-1"></i> --/--%</p>
-              </div>
-            </div>
-            <div class="card py-5">
-              <div id="weatherDisplay7">
-                <h5 id="day7"></h5>
-                <img src="" alt="" class="img-fluid" width="100" height="100" id="weatherIcon7">
-                  <h1 id="temperature7"><i class="bi bi-thermometer mx-1"></i>--/--°C</h1>
-                  <h4 id="weather7"> --/--</h4>
-                  <h6 id="weatherDescription7"> --/--</h6>
-                  <p id="humidity7"><i class="bi bi-droplet mx-1"></i> --/--%</p>
-              </div>
-            </div>
-            <div class="card py-5">
-              <h5 id="day8"></h5>
-              <div id="weatherDisplay8">
-                <img src="" alt="" class="img-fluid" width="100" height="100" id="weatherIcon8">
-                  <h1 id="temperature8"><i class="bi bi-thermometer mx-1"></i>--/--°C</h1>
-                  <h4 id="weather8"> --/--</h4>
-                  <h6 id="weatherDescription8"> --/--</h6>
-                  <p id="humidity8"><i class="bi bi-droplet mx-1"></i> --/--%</p>
-              </div>
-            </div>
+          <div class="slider-hourly" id="hoursSlider">
+
           </div>
         </div>
       </div>
     </section>
+    <section id="daily" class="mt-5 mb-5 py-5">
+      <div class="container">
+        <h1 class="mt-5">The next 8 days:</h1>
+        <div class="row mt-5 mb-2">
+          <div class="slider-daily" id="daysSlider">
+        </div>
+      </div>
+    </section>
+    <div id="date">
+    </div>
+    <script src="slick-slider.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js" integrity="sha512-KgffulL3mxrOsDicgQWA11O6q6oKeWcV00VxgfJw4TcM8XRQT8Df9EsrYxDf7tpVpfl3qcYD96BpyPvA4d1FDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
@@ -200,8 +135,7 @@
     ></script>
     <script src="date.js" type="module"></script>
     <script src="current.js"></script>
-    <script src="nextd.js"></script>
-    <script src="slick-slider.js"></script>
+    <script src="daily.js"></script>
     <!-- Close navbar on mobile after link click-->
     <script>
       $('.navbar-nav>li>a').on('click', function () {
