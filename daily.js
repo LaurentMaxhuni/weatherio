@@ -40,12 +40,8 @@ function displayWeather1(data1) {
     var day = daysOfWeek[dayIndex];
     var i = 1;
     var dateIndex = currentDay.getDate() + i;
-    var monthIndex = currentDay.getMonth();
     if(dateIndex === 32) {
         dateIndex = 1;
-    }
-    if (monthIndex === 12) {
-        monthIndex = 0;
     }
     console.log(monthIndex);
     console.log(data1);
@@ -64,16 +60,12 @@ for (let days of data1.daily) {
     $('#daysSlider').append(card);
     dayIndex++;
     dateIndex++;
-    monthIndex++;
     i++;
     if(dayIndex === 7) {
         dayIndex = 0; 
     }
     if(dateIndex === 32) {
         dateIndex = 1;
-    }
-    if (monthIndex === 12) {
-        monthIndex = 0;
     }
     day = daysOfWeek[dayIndex];
 }
