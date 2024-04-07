@@ -1,6 +1,6 @@
 let date = new Date();
 let daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-let monthOfYear = ['January','February','March','April','May','June','July','August','September','October','November','December']
+let monthOfYear = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 let monthIndex = date.getMonth();
 let month = monthOfYear[monthIndex];
 let datee = date.getDate();

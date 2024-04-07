@@ -34,13 +34,26 @@ function displayWeather1(data1) {
     var currentDay = new Date();
     var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     var dayIndex = currentDay.getDay() + 1;
+    if(dayIndex === 7) {
+        dayIndex = 0; 
+    }
     var day = daysOfWeek[dayIndex];
+    var i = 1;
+    var dateIndex = currentDay.getDate() + i;
+    var monthIndex = currentDay.getMonth();
+    if(dateIndex === 32) {
+        dateIndex = 1;
+    }
+    if (monthIndex === 12) {
+        monthIndex = 0;
+    }
+    console.log(monthIndex);
     console.log(data1);
 for (let days of data1.daily) {
     var card = document.createElement('div');
     card.innerHTML = `
         <div class="card py-5 mb-2">
-            <h5>${day}</h5>
+            <h5>${day} ${dateIndex}</h5>
             <img src="${"https://openweathermap.org/img/wn/" + days.weather[0].icon + "@4x.png"}" alt="" class="img-fluid" width="100" height="100">
             <h1><i class="bi bi-thermometer mx-1"></i>${Math.round(days.temp.max)}/${Math.round(days.temp.min)}°C</h1>
             <h4>${days.weather[0].main}</h4>
@@ -50,8 +63,17 @@ for (let days of data1.daily) {
     `;
     $('#daysSlider').append(card);
     dayIndex++;
+    dateIndex++;
+    monthIndex++;
+    i++;
     if(dayIndex === 7) {
         dayIndex = 0; 
+    }
+    if(dateIndex === 32) {
+        dateIndex = 1;
+    }
+    if (monthIndex === 12) {
+        monthIndex = 0;
     }
     day = daysOfWeek[dayIndex];
 }
@@ -59,11 +81,10 @@ $('#daysSlider').removeClass('slick-initialized slick-slider');
 sliderDaily();
 
 $('#hoursSlider').empty();
-var currentHour = currentDay.getHours();
+var currentTime = new Date();
+var currentHour = currentTime.getHours();
 var hoursOfDay = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
 var hour = hoursOfDay[currentHour];
-
-
 
 for(let hours of data1.hourly) {
     var card = document.createElement('div');
