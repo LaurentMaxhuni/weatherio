@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="col-12 col-lg-6 d-flex justify-content-center" id="message">
-            <img src="assets/message-bubble.png" alt="" class="img-fluid" width="450px" height="450px"/>
+            <img src="assets/message-bubble.png" alt="" class="img-fluid d-none d-lg-flex" width="450px" height="450px"/>
           </div>
         </div>
       </div>
@@ -136,10 +136,6 @@
     <script src="date.js"></script>
     <script src="current.js"></script>
     <script src="daily.js"></script>
-    <script>
-      let button = document.getElementById('submitWeather');
-      button.addEventListener('touch', getWeather(), getWeather1());
-    </script>
     <!-- Close navbar on mobile after link click-->
     <script>
       $('.navbar-nav>li>a').on('click', function () {
