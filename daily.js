@@ -19,7 +19,7 @@ function errorFunction1() {
 function getWeather1() {
     var location = document.getElementById('cityInput').value;
     var apiKey = '71a989d9218d2ed433c826160899c09f';
-    var geocodeApi = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`;
+    var geocodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`;
     fetch(geocodeApi).then(response => response.json()).then(city => getCityFromPosition(city)).catch(error => error);
     function getCityFromPosition(city) {
         var lat = city[0].lat;
