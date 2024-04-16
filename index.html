@@ -83,7 +83,7 @@
                     </div>
                     <form class="mt-5"> 
                         <input class="me-2 mb-3" type="text" placeholder="Enter a city name..." id="cityInput" onkeypress="if (event.keyCode == 13) {event.preventDefault();getWeather();getWeather1()}">
-                        <button class="btn btn-primary mb-3" type="button" onclick="getWeather();getWeather1()"><i class="bi bi-search"></i></button>
+                        <button class="btn btn-primary mb-3" type="button" onclick="getWeather();getWeather1()" id="submitWeather"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
                 <div class="col-12 col-lg-6" id="output">
@@ -136,6 +136,10 @@
     <script src="date.js"></script>
     <script src="current.js"></script>
     <script src="daily.js"></script>
+    <script>
+      let button = document.getElementById('submitWeather');
+      button.addEventListener('touch', getWeather(), getWeather1());
+    </script>
     <!-- Close navbar on mobile after link click-->
     <script>
       $('.navbar-nav>li>a').on('click', function () {

@@ -38,12 +38,30 @@ function displayWeather1(data1) {
         dayIndex = 0; 
     }
     var day = daysOfWeek[dayIndex];
-    var i = 1;
-    var dateIndex = currentDay.getDate() + i;
-    if(dateIndex === 32) {
-        dateIndex = 1;
+    var dateIndex = currentDay.getDate();
+    var monthIndex = currentDay.getMonth();
+    if(monthIndex === 4 || monthIndex === 6 || monthIndex === 9 || monthIndex === 11) {
+        if(dateIndex ===  31) {
+            dateIndex = 1;
+            dateIndex += 1;
+        } else {
+        dateIndex += 1;
+        }
+    } else if(monthIndex === 2) {
+        if(dateIndex === 29) {
+            dateIndex = 1;
+            dateIndex += 1;
+        } else {
+        dateIndex += 1;
+        }
+    } else if (monthIndex === 1 || monthIndex === 3 || monthIndex === 5 || monthIndex === 7 || monthIndex === 8 || monthIndex === 10 || monthIndex === 12) {
+        if(dateIndex === 32) {
+            dateIndex = 1;
+            dateIndex += 1;
+        } else {
+            dateIndex += 1;
+        }
     }
-    console.log(monthIndex);
     console.log(data1);
 for (let days of data1.daily) {
     var card = document.createElement('div');
@@ -59,13 +77,30 @@ for (let days of data1.daily) {
     `;
     $('#daysSlider').append(card);
     dayIndex++;
-    dateIndex++;
-    i++;
     if(dayIndex === 7) {
         dayIndex = 0; 
     }
-    if(dateIndex === 32) {
-        dateIndex = 1;
+    if(monthIndex === 4 || monthIndex === 6 || monthIndex === 9 || monthIndex === 11) {
+        if(dateIndex ===  31) {
+            dateIndex = 1;
+            dateIndex += 1;
+        } else {
+        dateIndex += 1;
+        }
+    } else if(monthIndex === 2) {
+        if(dateIndex === 29) {
+            dateIndex = 1;
+            dateIndex += 1;
+        } else {
+        dateIndex += 1;
+        }
+    } else if (monthIndex === 1 || monthIndex === 3 || monthIndex === 5 || monthIndex === 7 || monthIndex === 8 || monthIndex === 10 || monthIndex === 12) {
+        if(dateIndex === 32) {
+            dateIndex = 1;
+            dateIndex += 1;
+        } else {
+            dateIndex += 1;
+        }
     }
     day = daysOfWeek[dayIndex];
 }
