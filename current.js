@@ -28,6 +28,7 @@ function displayWeather(data) {
         alert('City not found');
         return;
     }
+    console.log(data);
     var cityName = document.getElementById('cityName').innerHTML = `${data.name}, ${data.sys.country}`;
     var weatherIcon = document.getElementById('weatherIcon');
     weatherIcon.setAttribute('src',
@@ -36,7 +37,7 @@ function displayWeather(data) {
     '@4x.png')
     var weather = document.getElementById('weather').innerHTML = `${data.weather[0].main}`;
     var weatherDescription = document.getElementById('weatherDescription');
-    var temperature = document.getElementById('temperature').innerHTML = `<i class="bi bi-thermometer mx-1"></i>${Math.round(data.main.temp)}°C`;
+    var temperature = document.getElementById('temperature').innerHTML = `<i class="bi bi-thermometer mx-1"></i>${Math.round(data.main.temp_max)}/${Math.round(data.main.temp_min)}°C`;
     var humidity = document.getElementById('humidity').innerHTML = `Humidity: ${data.main.humidity}%`;
     var windSpeed = document.getElementById('windSpeed');
     var windDirection = document.getElementById('windDirection');
