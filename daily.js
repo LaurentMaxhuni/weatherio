@@ -25,7 +25,7 @@ function getWeather1() {
         var lat = city[0].lat;
         var lon = city[0].lon;
         var url2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts,current&appid=${apiKey}&units=metric`;
-        fetch(url2).then(response => response.json()).then(data1 => displayWeather1(data1)).catch(error => alert('Error fetching data1: ' + console.log(error)));
+        fetch(url2).then(response => response.json()).then(data1 => displayWeather1(data1)).catch(error => alert('Error fetching data1: ' + error));
     }
 }
 
@@ -40,29 +40,33 @@ function displayWeather1(data1) {
     var day = daysOfWeek[dayIndex];
     var dateIndex = currentDay.getDate();
     var monthIndex = currentDay.getMonth();
-    if(monthIndex === 4 || monthIndex === 6 || monthIndex === 9 || monthIndex === 11) {
-        if(dateIndex ===  31) {
-            dateIndex = 1;
+    console.log(monthIndex);
+    if(monthIndex === 3 || monthIndex === 5 || monthIndex === 8 || monthIndex === 10) {
+        if(dateIndex ===  30) {
             dateIndex += 1;
+            if(dateIndex === 31) {
+                dateIndex = 1;
+            }
         } else {
         dateIndex += 1;
         }
-    } else if(monthIndex === 2) {
+    } else if(monthIndex === 1) {
         if(dateIndex === 29) {
             dateIndex = 1;
             dateIndex += 1;
         } else {
         dateIndex += 1;
         }
-    } else if (monthIndex === 1 || monthIndex === 3 || monthIndex === 5 || monthIndex === 7 || monthIndex === 8 || monthIndex === 10 || monthIndex === 12) {
-        if(dateIndex === 32) {
-            dateIndex = 1;
+    } else if (monthIndex === 0 || monthIndex === 2 || monthIndex === 4 || monthIndex === 6 || monthIndex === 7 || monthIndex === 9 || monthIndex === 11) {
+        if(dateIndex === 31) {
             dateIndex += 1;
+            if(dateIndex === 32) {
+                dateIndex = 1;
+            }
         } else {
             dateIndex += 1;
         }
     }
-    console.log(data1);
 for (let days of data1.daily) {
     var card = document.createElement('div');
     card.innerHTML = `
